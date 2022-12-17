@@ -1,0 +1,85 @@
+<html>
+  <!--
+  /**
+ * CSCI2720/ESTR2106 Assignment 3
+ * Using Database via Node.js
+ *
+ * I declare that the assignment here submitted is original
+ * except for source material explicitly acknowledged,
+ * and that the same or closely related material has not been
+ * previously submitted for another course.
+ * I also acknowledge that I am aware of University policy and
+ * regulations on honesty in academic work, and of the disciplinary
+ * guidelines and procedures applicable to breaches of such
+ * policy and regulations, as contained in the website.
+ *
+ * University Guideline on Academic Honesty:
+ *   http://www.cuhk.edu.hk/policy/academichonesty
+ * Faculty of Engineering Guidelines to Academic Honesty:
+ *   https://www.erg.cuhk.edu.hk/erg/AcademicHonesty
+ *
+ * Student Name: Kaan Simsek 
+ * Student ID  : 1155191086 
+ * Date        : 15.12.2022 
+ */
+//-->
+    <script>
+        const update=async ()=>{
+
+            const name=document.getElementById("eventname").value
+            const quota=document.getElementById("eventquota").value
+            const locId=document.getElementById("eventloc").value
+            const id=document.getElementById("eventId").value
+            const data=JSON.stringify({name:name,
+              quota:quota,
+              locId:locId});
+            const url='http://localhost:3000/ev/'+id
+            const requestOptions = {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: data
+            };
+            const a=await fetch(url, requestOptions).then(response=>console.log(response));
+            window.location.href = 'http://localhost:3000/ev/'+id
+
+        }
+        function load(){
+            const id=document.getElementById("eventId").value
+            console.log(id)
+            fetch('http://localhost:3000/load/'+id).then(data => {
+                return data.json();
+            }).then(event => {
+                const name=event['name']
+                const quota=event['quota']
+                const locId=event['loc']['locId']
+                document.getElementById("eventname").value=name
+                document.getElementById("eventquota").value=quota
+                document.getElementById("eventloc").value=locId
+            });
+        }
+    </script>
+  <body>
+    <form >
+
+      <label for="eventname">Event name</label>
+      <input type="text" id="eventname" name="name">
+      <br>
+      
+      <label for="eventloc">Location ID</label>
+      <input type="text" id="eventloc" name="loc">
+      <br>
+      
+      <label for="eventquota">Event quota</label>
+      <input type="text" id="eventquota" name="quota">
+      <br>
+      
+      <button type = "button" onclick="update()">update</button>
+      <br>
+      <label for="eventId">Event id</label>
+      <input type="text" id="eventId" name="id">
+      <br>
+      <button type = "button" onclick="load()">load</button>
+    </form>
+
+  </body>
+</html>

@@ -1,0 +1,130 @@
+
+
+
+/**
+ * CSCI2720/ESTR2106 Assignment 1
+ * Bootstrap Web Page with a Web Form
+ *
+ * I declare that the assignment here submitted is original
+ * except for source material explicitly acknowledged,
+ * and that the same or closely related material has not been
+ * previously submitted for another course.
+ * I also acknowledge that I am aware of University policy and
+ * regulations on honesty in academic work, and of the disciplinary
+ * guidelines and procedures applicable to breaches of such
+ * policy and regulations, as contained in the website.
+ *
+ * University Guideline on Academic Honesty:
+ *   http://www.cuhk.edu.hk/policy/academichonesty
+ * Faculty of Engineering Guidelines to Academic Honesty:
+ *   https://www.erg.cuhk.edu.hk/erg/AcademicHonesty
+ *
+ * Student Name: Kaan Simsek
+ * Student ID  : 1155191086
+ * Date        : 19.10.2022
+ */
+
+#hero .container h1{
+    color: white;
+}
+
+#hero .container h4{
+    color: white;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+  
+tr:hover {background-color: coral;}
+
+#navbar-hidden{
+    background-color: aquamarine;
+    visibility: hidden;
+}
+
+#navbar-hidden .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.progress{
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+h2{
+    text-align: left;
+}
+
+.footer-basic {
+    padding:40px 0;
+    background-color:#ffffff;
+    color:#4b4c4d;
+  }
+  
+  .footer-basic ul {
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+  }
+  
+  .footer-basic li {
+    padding:0 10px;
+  }
+  
+  .footer-basic ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.8;
+  }
+  
+  .footer-basic ul a:hover {
+    opacity:1;
+  }
+  
+  .footer-basic .social {
+    text-align:center;
+    padding-bottom:25px;
+  }
+  
+  .footer-basic .social > a {
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #ccc;
+    margin:0 8px;
+    color:inherit;
+    opacity:0.75;
+  }
+  
+  .footer-basic .social > a:hover {
+    opacity:0.9;
+  }
+  
+  .footer-basic .copyright {
+    margin-top:15px;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+    margin-bottom:0;
+  }
+  
